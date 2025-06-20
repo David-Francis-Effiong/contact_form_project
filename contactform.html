@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Contact form</title>
+  <link rel="stylesheet" href="tailwind.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+   <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .container {
+      align-items: center;
+      display: flex;
+      flex-direction: column; 
+    }
+
+    .footer {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .button {
+      background-color: green;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+  
+    #message {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    body {
+      background-color: grey;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    #first-name,
+    #last-name,
+    #email,
+    #check-box,
+    #message {
+      border: 1px solid black;
+    }
+  
+
+  </style>
+</head>
+<body>
+  <div class ="container bg-white p-8 rounded-lg max-w-2xl mx-auto mt-10">
+    <form id = "contact-form">
+      <h1 class ="text-4xl font-black mb-6">Contact Us</h1> <!--font-black is boldest, 900, font-extrabold is very bold, 800 and font-bold is bold, 700-->
+      <div class ="form-group border-black grid grid-cols-2 gap-4 mb-4">
+        <div> 
+        <label class="text-sm font-medium mb-3">First Name *</label>
+         <input type="text" id="first-name" name="first-name" >
+        </div>
+        <div>
+        <label class="text-sm font-medium mb-3">Last Name *</label>
+        <input type="text" id="last-name" name="last-name" >
+        </div>
+      </div><br>
+
+      <div>
+        <label class ="block text-sm font-medium mb-3">Email Address *</label>
+        <input type="text" id="email" name="email" class="w-full"><br> <!--use text instead of type to enable js use-->
+      </div>
+      <p id = "email-error"></p>
+
+      <!--query type with radio buttons-->
+
+      <div class="mb-4 mt-6">
+        <label class="block text-sm font-medium mb-3">Query Type *</label>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="border border-black rounded-lg p-4">
+            <label class="flex items-center cursor-pointer">
+              <input type="radio" name="query-type" value="general-enquiry" class="rounded-checkbox mr-3">
+              <span>General Enquiry</span>
+            </label>
+          </div>
+          <div class="border border-black rounded-lg p-4">
+            <label class="flex items-center cursor-pointer">
+              <input type="radio" name="query-type" value="support-request" class="rounded-checkbox mr-3"> <!--I have had to remove the 'required' attribute to enable javascript do its work-->
+              <span>Support Request</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+
+      
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message"></textarea><br><br>
+
+      <div>
+        <input type="checkbox" id="consent" name="consent">
+        <label for="consent">I consent to being contacted by the team</label>
+      </div><br><br>
+
+      <button type="submit" class="button w-full">Submit</button><br><br>
+
+    </form>
+  </div>
+
+  <div class="footer text-white">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" class="underline visited: text-purple-600">Frontend Mentor</a> 
+    Coded by <a href="https://github.com/David-Francis-Effiong" class="visited: text-purple-600">David Francis Effiong</a>
+  </div>
+<script src = "form.js"></script>
+</body>
+</html>
